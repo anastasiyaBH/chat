@@ -1,8 +1,10 @@
 import React, { Component } from 'react';
 import PropTypes from 'prop-types';
-import Message from './Message';
+import Message from '../Message';
 
-const Chat = ({ messages }) => {
+import './style.css';
+
+const Chat = ({ messages }) => (
   <div className="chat">
     <ul>
       {
@@ -12,7 +14,7 @@ const Chat = ({ messages }) => {
       }
     </ul>
   </div>
-}
+);
 
 Chat.propTypes = {
   messages: PropTypes.array.isRequired
