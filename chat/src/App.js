@@ -1,17 +1,14 @@
 import React from 'react';
 
 import Header from './components/Header'
-import Log from './containers/LoginContainer'
+/* import Log from './containers/LoginContainer' */
+import Message from './components/Message'
 import './app.css';
-
-const st = (val) => {
-  console.log(val);
-}
 
 const App = () => (
   <>
     <Header />
-    <Log start={st} /> 
+    <Message message="Hello" time="14.08.2019" from="Me" />
   </>
 );
 

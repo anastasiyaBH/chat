@@ -3,6 +3,7 @@ import thunkMiddleware from 'redux-thunk'
 import { reducer } from './reducers/reducers'
 import * as actionTypes from './actions/actionsTypes';
 
+/********************************************************** */
 const composeEnhancers = compose;
 
 const localMiddleware = store => next => action => {
@@ -21,6 +22,7 @@ const middlewares = [thunkMiddleware, localMiddleware, pingMiddleware];
 
 const enhancer = composeEnhancers(applyMiddleware(...middlewares));
 
+/************************************************************* */
 const store = createStore(reducer, enhancer);
 
 
