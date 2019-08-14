@@ -1,0 +1,12 @@
+.message {
+  background: blue;
+  color: azure;
+}
+
+.message__time {
+  color: red;
+}
+
+.message__from {
+  font-weight: bold;
+}
