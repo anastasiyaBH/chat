@@ -5,6 +5,11 @@ export const login = name => ({
   name
 });
 
+export const connectUser = name => ({
+  type: actionTypes.CONNECT_USER,
+  name
+});
+
 export const receiveMessage = (message, from, id, time) => ({
   type: actionTypes.RECEIVE_MESSAGE,
   message,

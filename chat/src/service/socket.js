@@ -1,4 +1,4 @@
-
+import { receiveMessage } from '../store/actions/actions'
 
 const WSocket = (dispatch) => {
 

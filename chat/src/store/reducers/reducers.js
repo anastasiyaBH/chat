@@ -5,7 +5,8 @@ import * as actionTypes from '../actions/actionsTypes';
 
 const loginReducer = (state = '', action) => {
   switch (action.type) {
-    case actionTypes.LOGIN: {
+    case actionTypes.LOGIN: 
+    case actionTypes.CONNECT_USER: {
       return action.name;
     }
     default: {
@@ -41,7 +42,7 @@ const messageReducer = (state = Rstate, action) => {
       return Rstate.concat([
         {
           message: action.message,
-          author: action.author,
+          from: action.from,
           id: action.id,
           time: action.time,
         }
