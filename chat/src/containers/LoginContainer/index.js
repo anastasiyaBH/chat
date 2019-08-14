@@ -2,11 +2,12 @@ import React, { useState, useCallback } from 'react';
 import { connect } from 'react-redux';
 import PropTypes from 'prop-types';
 
-import Login from "../../components/Login"
+import Login from '../../components/Login';
+import { login } from '../../store/actions/actions'
 
 const ENTER_KEY = 'Enter';
 
-const LoginContainer = ({ start }) => {
+const LoginContainer = ({ login }) => {
 
   const [name, setName] = useState('');
 
@@ -18,10 +19,10 @@ const LoginContainer = ({ start }) => {
   const handleKeyPress = useCallback(
     ({ key }) => {
       if(key ===ENTER_KEY) {
-        start(name)
+        login(name)
       }
     },
-    [name, start],
+    [name, login],
   );
 
   return (
@@ -33,8 +34,17 @@ const LoginContainer = ({ start }) => {
 };
 
 LoginContainer.propTypes = {
-  start: PropTypes.func.isRequired,
+  login: PropTypes.func.isRequired,
 };
 
+const mapDispatchToProps = dispatch => ({
+  login: (name) => {
+    dispatch(login(name));
+  }
+})
 
-export default LoginContainer;
+const Log = connect(() => ({}), mapDispatchToProps)(LoginContainer);
+
+export default Log;
+
+

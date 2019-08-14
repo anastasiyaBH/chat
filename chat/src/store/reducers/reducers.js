@@ -1,6 +1,9 @@
+import { combineReducers } from 'redux';
+
 import * as actionTypes from '../actions/actionsTypes';
 
-export const reducer = (state = '', action) => {
+
+const loginReducer = (state = '', action) => {
   switch (action.type) {
     case actionTypes.LOGIN: {
       return action.name;
@@ -10,3 +13,8 @@ export const reducer = (state = '', action) => {
     }
   }
 }
+
+export const reducer = combineReducers({
+  loginState: loginReducer,
+  /* messageState: messageReducer */
+});
